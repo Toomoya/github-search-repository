@@ -11,7 +11,8 @@ button.addEventListener("click", function(e) {
     elem = document.getElementById('container');
     let tags = '';
     for(var i=0; i< response.items.length; i++){
-      tags += '<div>' + response.items[i].full_name + '</div>';
+      const url = response.items[i].clone_url;
+      tags += '<div class="owner_name">' + response.items[i].owner.login + '</div>' + `<a href=${url}>${url}</a>`;
     }
     elem.innerHTML = tags;
   });
