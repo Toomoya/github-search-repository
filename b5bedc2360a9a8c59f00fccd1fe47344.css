@@ -1,0 +1,25 @@
+/* body {
+  background-color: #d4d4d4;
+} */
+.owner_name {
+  color: #3a3a3a;
+  font-weight: bold;
+  margin-top: 18px;
+}
+a {
+  color:skyblue;
+}
+
+button{
+  font-weight: bold;
+  text-decoration: none;
+  background: skyblue;
+  color:white;
+  border-radius: 20px;
+  font-family: 'Avenir','Arial';
+}
+
+h2 {
+color: #6594e0;
+border-bottom: dashed 2px #6594e0;
+}
