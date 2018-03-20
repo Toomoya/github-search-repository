@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({6:[function(require,module,exports) {
+})({3:[function(require,module,exports) {
 // submitBtn取得する
 var submit = document.getElementById('submit');
 // クリックリスナーの登録
@@ -96,11 +96,12 @@ submit.addEventListener("click", function (e) {
     for (var i = 0; i < response.items.length; i++) {
       var reposityUrl = response.items[i].clone_url;
       var userImageUrl = response.items[i].owner.avatar_url;
-      var userImage = '<div>' + ("<image class=\"user_image\" src = " + userImageUrl + ">") + '</div>';
-      var userName = '<div class="owner_name">' + response.items[i].owner.login + '</div>';
+      var userImage = "<div class=\"user_img\"><image class=\"user_image\" src=" + userImageUrl + "></div>";
+      var userName = "<div class=\"owner_name\">" + response.items[i].owner.login + "</div>";
       var urlLink = "<a href=" + reposityUrl + "> " + reposityUrl + "</a>";
       var starCount = "<div class=\"star\">\u2605\uFF1A" + response.items[i].stargazers_count + "</div>";
-      tags += userImage + userName + urlLink + starCount;
+      var userInfo = "<div class=\"user_info\">" + userName + urlLink + starCount + "</div>";
+      tags += "<div class=\"user_cell\">" + userImage + userInfo + "</div>";
     }
     container.innerHTML = tags;
   });
@@ -111,7 +112,7 @@ submit.addEventListener("click", function (e) {
 //
 //''で囲むと文字列として認識してしまうからその中に変数を入れると変数も文字列として認識されてしまう
 //solution→``で囲み、変数部分を${}で囲む
-},{}],15:[function(require,module,exports) {
+},{}],6:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -133,7 +134,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '56372' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '59746' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -234,5 +235,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[15,6])
-//# sourceMappingURL=/dist/intern.map
+},{}]},{},[6,3])
+//# sourceMappingURL=/dist/github-search-repository.map
