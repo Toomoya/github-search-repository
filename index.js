@@ -20,11 +20,12 @@ submit.addEventListener("click", function(e) {
     for(var i=0; i< response.items.length; i++){
       const reposityUrl = response.items[i].clone_url;
       const userImageUrl = response.items[i].owner.avatar_url;
-      const userImage = '<div>'+`<image class="user_image" src = ${userImageUrl}>`+'</div>';
-      const userName = '<div class="owner_name">' + response.items[i].owner.login + '</div>';
+      const userImage = `<div class="user_img"><image class="user_image" src=${userImageUrl}></div>`;
+      const userName = `<div class="owner_name">${response.items[i].owner.login}</div>`;
       const urlLink = `<a href=${reposityUrl}> ${reposityUrl}</a>`;
       const starCount = `<div class="star">★：${response.items[i].stargazers_count}</div>`;
-      tags += userImage + userName + urlLink + starCount;
+      const userInfo = `<div class="user_info">${userName}${urlLink}${starCount}</div>`;
+      tags += `<div class="user_cell">${userImage}${userInfo}</div>`;
     }
     container.innerHTML = tags;
   });

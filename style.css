@@ -34,6 +34,11 @@ h2 {
   height: 30px;
   font-size: 1.5em;
 }
-#container{
-  display: column;
+
+.user_cell {
+  display: flex;
+}
+.user_info {
+  margin-left: 15px;
+  margin-top: 20px;
 }
