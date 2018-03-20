@@ -23,7 +23,7 @@ submit.addEventListener("click", function(e) {
       const userImage = '<div>'+`<image class="user_image" src = ${userImageUrl}>`+'</div>';
       const userName = '<div class="owner_name">' + response.items[i].owner.login + '</div>';
       const urlLink = `<a href=${reposityUrl}> ${reposityUrl}</a>`;
-      const starCount = `<div class="star">スター数：${response.items[i].stargazers_count}</div>`;
+      const starCount = `<div class="star">★：${response.items[i].stargazers_count}</div>`;
       tags += userImage + userName + urlLink + starCount;
     }
     container.innerHTML = tags;
