@@ -7,8 +7,10 @@ submit.addEventListener("click", function(e) {
   const url = 'https://api.github.com/search/repositories?q=' + textFormVal + '&sort=stars';
   fetch(url, {
     method: 'GET'
-    //通信ができたら
-  }).then(res => res.json())
+    //通信関連
+  }).then(res => {
+    return res.json();
+  })
   .catch(error => console.error('Error:', error))
   .then(response => {
     console.log('Success:', response);
@@ -22,9 +24,9 @@ submit.addEventListener("click", function(e) {
       const userImageUrl = response.items[i].owner.avatar_url;
       const userImage = `<div class="user_img"><image class="user_image" src=${userImageUrl}></div>`;
       const userName = `<div class="owner_name">${response.items[i].owner.login}</div>`;
-      const urlLink = `<a href=${reposityUrl}> ${reposityUrl}</a>`;
-      const starCount = `<div class="star">★：${response.items[i].stargazers_count}</div>`;
-      const userInfo = `<div class="user_info">${userName}${urlLink}${starCount}</div>`;
+      const userLink = `<a class="user_link" href=${reposityUrl}>${reposityUrl}</a>`;
+      const userStarCount = `<div class="star">★：${response.items[i].stargazers_count}</div>`;
+      const userInfo = `<div class="user_info">${userName}${userLink}${userStarCount}</div>`;
       tags += `<div class="user_cell">${userImage}${userInfo}</div>`;
     }
     container.innerHTML = tags;
