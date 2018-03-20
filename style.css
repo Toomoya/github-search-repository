@@ -1,16 +1,24 @@
-/* body {
-  background-color: #d4d4d4;
-} */
+a {
+  color:skyblue;
+}
+
+h2 {
+  color: #6594e0;
+  border-bottom: dashed 2px #6594e0;
+}
+
 .owner_name {
   color: #3a3a3a;
   font-weight: bold;
   margin-top: 18px;
 }
-a {
-  color:skyblue;
+
+.user_image {
+  width: 100px;
+  margin-top: 30px;
 }
 
-button{
+#submit {
   font-weight: bold;
   text-decoration: none;
   background: skyblue;
@@ -19,7 +27,6 @@ button{
   font-family: 'Avenir','Arial';
 }
 
-h2 {
-color: #6594e0;
-border-bottom: dashed 2px #6594e0;
+#container{
+  display: column;
 }
