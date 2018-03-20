@@ -6,7 +6,7 @@ https://toomoya.github.io/github-search-repository/
 
 ## Screenshot
 
-<img src="./art/demo.png" width="300">
+<img src="./art/demo.jpg" width="300">
 
 ## Required  
 
